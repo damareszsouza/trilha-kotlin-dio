@@ -19,6 +19,17 @@ class Bootcamp(nome: String, cargaHoraria: Int, val cursos: List<Curso>) : Forma
     fun adicionarCurso(curso: Curso) {
         cursos.plus(curso)
     }
+}
+
+
+open class Formacao(val nome: String, val cargaHoraria: Int)
+
+class Curso(nome: String, cargaHoraria: Int, val categoria: String) : Formacao(nome, cargaHoraria)
+
+class Bootcamp(nome: String, cargaHoraria: Int, val cursos: List<Curso>) : Formacao(nome, cargaHoraria) {
+    fun adicionarCurso(curso: Curso) {
+        cursos.plus(curso)
+    }
 } 
 
 
